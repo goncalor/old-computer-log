@@ -57,6 +57,20 @@ So the computer is complaining it cannot initialise the screen. The manual also 
 
 The battery is most probably dead in a computer with 20+ years, that much I figured. But now I'm sure this may be preventing the system to boot. Replacing the battery might be all that is needed for it to boot.
 
+#### 12h30
+
+The battery plastic box is fastened to the chassis with velcrum. The box seems to be a bit damp: the battery may be leaking.
+
+Nope, it's not leaking. The battery turns out to occupy only half the space in the box. It's a 1/2 AA battery! It's a TL-5151, 3.6 V and unknown capacity. I should check if it's dead, but I don't have a multimeter (should buy one). I guess I will use one LED and a resistor to see if it lights up.
+
+A green LED (2.1 V?), a 220 and a 330 resistors in parallel. That should be about 9.1 mA through the LED. Nothing happened, as expected. This battery is dead (going to save it to test later with a multimeter, I guess). I think I will make a series of two AA batteries and test this. I don't have any 3.6 V battery.
+
+BTW: there seems to be no on-board battery. The place for the battery is there but there is none soldered. Unless it's on the underside of the motherboard. An external battery can be used connected to JP1 (marked on the board, it says J1 on this manual) and that is where the TL-5151 is connected.
+
+#### 15h
+
+Grabbed a 2 AAA battery support I had laying around. Substituted the 3.6 battery by this 2 AAA battery combo (3V total). Powered the computer. Still the same beeps. Either the problem is not (only) from the battery or 3V won't do it.
+
 
 License
 =======
