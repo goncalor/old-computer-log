@@ -29,3 +29,14 @@ From the [GMB-486sg v2 manual](doc/GMB-486sg-v2_603.pdf) I learned that the keyb
 
 ![Gemlight GMB-486SG v2.2](img/Gemlight_GMB-486SG_v2.2.jpg)
 
+
+
+License
+=======
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International license][license].
+
+![BY-SA badge][by-sa-badge]
+
+[license]: http://creativecommons.org/licenses/by-sa/4.0/
+[by-sa-badge]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
