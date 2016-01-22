@@ -103,6 +103,16 @@ I can't find MD-4DUV, but I can find M*B*-4DUV/UVC. Maybe the D is a typo in the
 ![MB-4DUVC model 2](doc/MB-4DUVC_MODEL_2.png)
 [MB-4DUVC-m2]: doc/MB-4DUVC_MODEL_2.html
 
+#### 17h15
+
+Something interesting is happened: I'm in the process of disassembling the computer. I removed all boards except the video board. Then I turned on the computer (so no disk drive, no diskette drive) without anything connected to the output of the video board. This time there was a single beep!! I tried to do it again, and only one beep again. Then I tried to connect a VGA monitor: the old four beeps error returned. I disconnected the monitor, still four beeps. I haven't yet figured out what is defining if the error is triggered or not. Working on that. But hey! This is the first time there is a single beep!
+
+Now with the same setup I'm getting sometimes a lower tone, longer 4 beeps. Sometimes followed by a single higher pitch (the original one) single beep. I can't figure what makes the changes, but what I have in mind is whether there is a cable connected to the VGA port; and whether the port from the board is touching the metal surrounding it or not. This second consideration happens only because the bolts of the VGA port are missing, meaning the port is not fixed to the I/O shield. This might result in some grounding problem.?
+
+Ah, BTW, I don't even have the CMOS battery in place. I removed the JP1 jumper.
+
+Now I put a bolt on the VGA, so now it is connected to the I/O shield. When I turn the power on or reset (with the reset button) there are four low pitch, long beeps followed by a short high pitch one. This now happens consistently.
+
 
 License
 =======
