@@ -71,6 +71,38 @@ BTW: there seems to be no on-board battery. The place for the battery is there b
 
 Grabbed a 2 AAA battery support I had laying around. Substituted the 3.6 battery by this 2 AAA battery combo (3V total). Powered the computer. Still the same beeps. Either the problem is not (only) from the battery or 3V won't do it.
 
+#### 18h
+
+Since I still don't know if the problem is the lack of battery I tried to check this again. I don't have any 3.6 V battery, but I have an Arduino which can supply 3.3 V. I powered JP1 with 3.3 V from the Arduino. Result: same ol' beep. I think I can pretty much rule out that the problem is from the lack of battery. I guess there is nothing else to do without disassembling the thing first.
+
+#### 22h40
+
+Before disassembling there is one more (stupid) thing I had to try: turn it on with no battery at all. I just did. Nothing new happened.
+
+
+22/01/2016
+==========
+
+#### 9h30
+
+This motherboard manual has no date. There is one BIOS example that has date 1994 though. None of the referred CPUs have a frequency greater than 66 MHz. Is it possible that the motherboard on the computer is a version greater than v2.2?
+
+I read about some systems that won't POST (power-on self-test) if the RTC (real-time clock) battery is dead. This is another hypothesis.
+
+#### 11h00
+
+Started to disassemble and vacuum. The motherboard reads
+
+    MD-4DUV-VER.: 2.0
+    MADE IN TAIWAN R.O.C.
+
+I'm looking up this motherboard, trying to find a manual. Found several lookalikes on eBay, but none equal. Now I know this is not a Gemlight GMB-486SG v2.
+
+I can't find MD-4DUV, but I can find M*B*-4DUV/UVC. Maybe the D is a typo in the motherboard? I can't find a PDF with all the info regarding any of these either. Nonetheless I found a webpage with all the [jumper configurations for MB-4DUVC model 2][MB-4DUVC-m2]. This webpage has a schematic for the board, identifying the positions of the main components on the board. The jumper positions on the computer match the ones of the schematic. But the schematic mentions a "KBD" to the right, close to JP1. JP3 seems not to exist on the board (close to KBD). Also the TAG seems not to exist, or at least it is not in the same position as in the schematic.
+
+![MB-4DUVC model 2](doc/MB-4DUVC_MODEL_2.png)
+[MB-4DUVC-m2]: doc/MB-4DUVC_MODEL_2.html
+
 
 License
 =======
