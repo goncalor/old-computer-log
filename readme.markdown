@@ -1,4 +1,4 @@
-This is a log of my efforts trying to bring a computer that seems to date from around 1993 back to life.
+This is a log of my efforts trying to bring a computer that seems to date from 1994 back to life.
 
 
 19/01/2016
@@ -112,6 +112,36 @@ Now with the same setup I'm getting sometimes a lower tone, longer 4 beeps. Some
 Ah, BTW, I don't even have the CMOS battery in place. I removed the JP1 jumper.
 
 Now I put a bolt on the VGA, so now it is connected to the I/O shield. When I turn the power on or reset (with the reset button) there are four low pitch, long beeps followed by a short high pitch one. This now happens consistently.
+
+Connected the 2 AAA batteries to JP1. The same beep pattern continues. Time to remove the video card.
+
+#### 18h30
+
+With the graphics card removed the original four beeps occur (the ones described on 21/01/2016).
+
+Now removing the RAM. There are four slots, each with a RAM stick with 8 HM514400BS6. This IC has 1 Mwords each with 4 bits. Since the system is 32 bits the 8 chips make a complete 32 bit word. Therefore each RAM stick has 4 MB, or 1 MDWORD. 16 MB total on-board. Yay!
+
+With no RAM present the cumputer makes a long beep stops for a bit and does it again. It seems to do this infinitely. With only one stick (in BANK 0) the 4 old beeps return. Also tried only BANK 3: same result.
+
+#### 20h
+
+All RAM back in place. The video card too (using SL3, instead of the original SL1). From what's written on the board it seems connecting pins 3 and 4 of JP1 resets the CMOS. I tried this. With the jumper there there are no beeps at all when the computer is turned on. Is this good? The monitor still recognises no image though.
+
+#### 20h15
+
+Put the 2 AAA batteries on JP1. Video and disk cards are in place (no disks connected though). Got image for the first time! The image is not good though. But I think I can distinguish the energy star logo on the upper right corner! This may be starting to get somewhere. I think when it booted the four low pitch beeps plus the high pitch one occurred (not sure).
+
+![Distorted AwardBIOS. Energy Star logo can be discerned](img/Energy-Star_distorted.jpg)
+
+OMG! I removed the VGA cable, rebooted it, inserted the VGA cable and there! The AwardBIOS image was there, the memory check was being performed, the Energy Star logo nicely done this time... Success! I got image!
+
+The image was a bit to the left of the monitor and was cut. I adjusted that on the monitor. The motherboard that is stated by the AwardBIOS is MB-4DUV VER 3.0. The processor is 80486DX-S at 66 MHz. The memory is 16384K, exactly 16 MB, as expected.
+
+![AwardBIOS main screen](img/AwardBIOS_main.jpg)
+
+Now I need a keyboard to interact with this thing :) I will try to adapt PS/2 to 5-pin DIN, since this should be straightforward, just requiring some wiring.
+
+Well, the bad news are that this is inconsistent: I power the computer off and tried to boot it again to see if I got the same results. I did not. No image again. Must try to figure how to reproduce the previous success.
 
 
 License
