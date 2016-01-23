@@ -144,6 +144,50 @@ Now I need a keyboard to interact with this thing :) I will try to adapt PS/2 to
 Well, the bad news are that this is inconsistent: I power the computer off and tried to boot it again to see if I got the same results. I did not. No image again. Must try to figure how to reproduce the previous success.
 
 
+23/01/2016
+==========
+
+It seems the AwardBIOS POST beep codes are the ones in the following table. From these a problem with the video card seems to exist, which only makes sense.
+
+Beeps                    | Meaning
+------------------------ | -------------------
+1 short                  | "All systems clear"
+1 long, 2 short          | Video adapter error: Bad or improperly seated video card
+Repeating beeps          | Memory error: Bad or improperly seated RAM
+1 long, 3 short          | Bad video RAM or video card not present
+High-frequency beeps     | Overheated CPU: Check fans
+Repeating high/low beeps | CPU: Improperly seated or defective CPU
+
+I removed the video card and am examining it. There are several ICs:
+
+- MB81C4256A-70P CMOS dynamic RAM (Fujitsu)
+- CL-GD5428-80QC-A VGA controller (Cirrus Logic)
+- CL-GD5... ? (Cirrus Logic)
+- GAL116V8B E<sup>2</sup>CMOS PLD (Lattice Semiconductor)
+- SN74F32 OR gates array (Texas Instruments)
+- SN74F245N octal bus transceiver (Texas Instruments)
+
+Now, the Lattice GAL116V8B programmable logic might be a problem: according to it's datasheet there is 20 year data retention. Since the computer appears to date from around 1994 and we are in 2016... The EE memory might not have the original data anymore. Nonetheless I'm unsure if this is the case, since I was able to get image from this card once already.
+
+One of the Cirrus Logic ICs has a sticker on its top, so I can't know which IC it is. But I think this might be the video card BIOS chip. I can't find information on the graphics card online. The board reads
+
+    VGA-5426
+    PCB REV. C
+    FCC ID: GPLAPC-5426
+    MADE IN TAIWAN
+
+Still on the GAL116V8B problem theory: maybe the memory is not fully retained anymore an it is in a state that sometimes it outputs the programmed values and sometimes it doesn't? I don't know what happens when a EE memory expires its data retention time, but this is a possibility. With this in mind the one and half times the computer worked maybe I was lucky enough for the GAL116V8B to output what it should.
+
+#### 15h30
+
+Oh my... Was the problem a dirty graphics board pin? There was a little dot of something on one of the VESA Local Bus pins. I scratched it with the tip of a mechanical pencil and also scratched all others with my nails. I inserted the graphics card, connected the VGA cable, powered the computer... A single short beep! And voilà: the AwardBIOS main screen shows up on the monitor. I rebooted two times and I worked every time!
+
+The AwardBIOS performs the memory test and additionally it complains about no keyboard being present and that there was a CMOS Checksum error. Also I confirmed that the CMOS battery on JP1 is not needed for the system to boot.
+
+    Keyboard error or no keyboard present
+    CMOS Checksum error - Defaults loaded
+
+
 License
 =======
 
