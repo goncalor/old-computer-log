@@ -162,7 +162,7 @@ I removed the video card and am examining it. There are several ICs:
 
 - MB81C4256A-70P CMOS dynamic RAM (Fujitsu)
 - CL-GD5428-80QC-A VGA controller (Cirrus Logic)
-- CL-GD5... ? (Cirrus Logic)
+- CL-GD5... BIOS ROM? (Cirrus Logic)
 - GAL116V8B E<sup>2</sup>CMOS PLD (Lattice Semiconductor)
 - SN74F32 OR gates array (Texas Instruments)
 - SN74F245N octal bus transceiver (Texas Instruments)
@@ -185,7 +185,13 @@ Oh my... Was the problem a dirty graphics board pin? There was a little dot of s
 The AwardBIOS performs the memory test and additionally it complains about no keyboard being present and that there was a CMOS Checksum error. Also I confirmed that the CMOS battery on JP1 is not needed for the system to boot.
 
     Keyboard error or no keyboard present
-    CMOS Checksum error - Defaults loaded
+    CMOS checksum error - Defaults loaded
+
+If I leave the 2 AAA batteries on JP1 and reset the computer the CMOS error still appears. So I guess the settings are not being saved. Maybe 3 V is not enough voltage to keep the settings. Or there is another problem that prevents the settings from being preserved.
+
+Now I need to make a PS/2 to 5-pin DIN adapter. Since the GAL116V8B might die (20 year data retention) I should also consider mapping it so that I can make a copy of it if needed.
+
+Tried to reset the CMOS battery by using the 2-3 jumper on JP1. For this I shut down the system, put the jumper there, powered, waited a few seconds, shutdown, removed the jumper, powered. Not sure if this is the correct procedure to reset the CMOS (I don't have a manual!). The fact is that the CMOS checksum error is still there.
 
 
 License
