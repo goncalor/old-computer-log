@@ -194,6 +194,14 @@ Now I need to make a PS/2 to 5-pin DIN adapter. Since the GAL116V8B might die (2
 Tried to reset the CMOS battery by using the 2-3 jumper on JP1. For this I shut down the system, put the jumper there, powered, waited a few seconds, shutdown, removed the jumper, powered. Not sure if this is the correct procedure to reset the CMOS (I don't have a manual!). The fact is that the CMOS checksum error is still there.
 
 
+25/01/2016
+==========
+
+Read the datasheet for GAL116V8B. It's not as easy to map as I thought. To be honest I don't understand it too well from the datasheet. It has several modes and the datasheet does not specify how it can be programmed. All I know is there is some compiler. There is a "security cell" feature which "prevents unauthorized copying of array patterns". If this was activated when manufacturing I cannot hope to make a direct copy of the configuration. This mode can only be disabled by re-programming the device, which prevents the examination of the original configuration.
+
+On the keyboard adaptor side: I'm thinking of making a connector, but I think it's difficult to make female connectors. I need a female PS/2 and a male 5-pin DIN. I could buy both instead, but I don't feel like it...
+
+
 License
 =======
 
