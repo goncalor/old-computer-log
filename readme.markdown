@@ -160,12 +160,14 @@ Repeating high/low beeps | CPU: Improperly seated or defective CPU
 
 I removed the video card and am examining it. There are several ICs:
 
-- MB81C4256A-70P CMOS dynamic RAM (Fujitsu)
-- CL-GD5428-80QC-A VGA controller (Cirrus Logic)
-- CL-GD5... BIOS ROM? (Cirrus Logic)
-- GAL116V8B E<sup>2</sup>CMOS PLD (Lattice Semiconductor)
-- SN74F32 OR gates array (Texas Instruments)
-- SN74F245N octal bus transceiver (Texas Instruments)
+IC               | Description           | Manufacturer
+---------------- | --------------------- | ----------------
+MB81C4256A-70P   | CMOS dynamic RAM      | Fujitsu
+CL-GD5428-80QC-A | VGA controller        | Cirrus Logic
+CL-GD5...?       | BIOS ROM ?            | Cirrus Logic
+GAL116V8B        | E<sup>2</sup>CMOS PLD | Lattice Semiconductor
+SN74F32          | OR gates array        | Texas Instruments
+SN74F245N        | octal bus transceiver | Texas Instruments
 
 Now, the Lattice GAL116V8B programmable logic might be a problem: according to it's datasheet there is 20 year data retention. Since the computer appears to date from around 1994 and we are in 2016... The EE memory might not have the original data anymore. Nonetheless I'm unsure if this is the case, since I was able to get image from this card once already.
 
