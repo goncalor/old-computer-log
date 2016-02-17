@@ -204,6 +204,23 @@ Read the datasheet for GAL116V8B. It's not as easy to map as I thought. To be ho
 On the keyboard adaptor side: I'm thinking of making a connector, but I think it's difficult to make female connectors. I need a female PS/2 and a male 5-pin DIN. I could buy both instead, but I don't feel like it...
 
 
+17/02/2016
+=========
+
+Well, I'll just buy a DIN 5 male PS/2 female converter. But before I decide on that I should also see if I would be able to connect a mouse. Another issue is how to put an OS into this hard drive... It's an IDE hard drive and the computer has no USB (the 1.0 specification was introduced only in January 1996, so...) and no optical disk drive. All I have is a floppy drive. I feel pretty much locked out about this. Nonetheless I believe the disk must still have some OS in it. I have no idea if it has a password.
+
+Hm... What if this computer didn't even have a mouse?! I'm looking at the board I suspect must be the one where the mouse would connect, but I can't find info on it. Actually it has a FCC ID on it: FSUGSG5A. On the FCC website it says
+
+    Application: Hand-Held Scanner
+    Equipment Class: JBP - Part 15 Class B Computing Device Peripheral
+
+So it seems this is for a scanner, not for a mouse. Or can a mouse be in a way a "hand-held scanner?" BTW, the connector that the board has to the outside of the computer is a 8 pin mini-DIN connector.
+
+The Ethernet card has an RJ45 connector and an AUI (Attachment Unit Interface) female connector.
+
+I can't think of any place where the mouse could be connected. Maybe 1) there was no mouse at all (seems strange...? But I don't know which OS this had) or 2) the card where the mouse connected was removed.
+
+
 License
 =======
 
