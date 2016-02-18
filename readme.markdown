@@ -220,6 +220,11 @@ The Ethernet card has an RJ45 connector and an AUI (Attachment Unit Interface) f
 
 I can't think of any place where the mouse could be connected. Maybe 1) there was no mouse at all (seems strange...? But I don't know which OS this had) or 2) the card where the mouse connected was removed.
 
+18/02/2016
+=========
+
+I just checked that mouses exist with 8 pin mini-DIN interface. Therefore I think that board really is where a mouse connects.
+
 
 License
 =======
