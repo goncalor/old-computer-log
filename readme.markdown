@@ -225,6 +225,14 @@ I can't think of any place where the mouse could be connected. Maybe 1) there wa
 
 I just checked that mouses exist with 8 pin mini-DIN interface. Therefore I think that board really is where a mouse connects.
 
+It seems that 8 pin mini-DIN was used at least by Sun Microsystems to aggregate both keyboard and mouse in a single connector. There is a mouse in pin and both a keyboard in and out pins. This probably means I could wire a PS/2 mouse into this 8 pin connector and make it work.
+
+
+23/02/2016
+==========
+
+A few weeks ago I found a computer on the street. It's from around 2006 (it has a Windows Vista license sticker on it, and Vista was released to manufacturers starting on 8 November 2006). This computer happens to have a DVD IDE drive. This means I now have a drive to put on the computer this log is about. This upgrades my possibilities of putting software into the hard disk. I'm not sure if a DVD drive will work there, but I suppose since the interface is IDE it should work.
+
 
 License
 =======
