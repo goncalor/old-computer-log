@@ -233,6 +233,11 @@ It seems that 8 pin mini-DIN was used at least by Sun Microsystems to aggregate 
 
 A few weeks ago I found a computer on the street. It's from around 2006 (it has a Windows Vista license sticker on it, and Vista was released to manufacturers starting on 8 November 2006). This computer happens to have a DVD IDE drive. This means I now have a drive to put on the computer this log is about. This upgrades my possibilities of putting software into the hard disk. I'm not sure if a DVD drive will work there, but I suppose since the interface is IDE it should work.
 
+12/04/2017
+==========
+
+Long time no see. I ordered a 5-pin DIN male to PS/2 female adapter. It arrived today. I already checked that it fits the connector for the keyboard but I don't have time to fire up the computer right now.
+
 
 License
 =======
