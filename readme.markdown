@@ -227,7 +227,6 @@ I just checked that mouses exist with 8 pin mini-DIN interface. Therefore I thin
 
 It seems that 8 pin mini-DIN was used at least by Sun Microsystems to aggregate both keyboard and mouse in a single connector. There is a mouse in pin and both a keyboard in and out pins. This probably means I could wire a PS/2 mouse into this 8 pin connector and make it work.
 
-
 23/02/2016
 ==========
 
@@ -266,6 +265,19 @@ I made a video showing the OS booting and opening some programs and screensavers
 I put the disk back in the old computer and it still didn't rotate. So I removed the board that controls the hard drive and diskette to see if the pins were clean (after all the problem with the video card was a dirty pin). They were not clean. I just scratched them a little with my nails, but they would benefit from a more through cleaning. I inserted the board back and now the disk rotates. But! it is not detected by the BIOS. So, now I think the problem might be one from these: some dirty pins are not making contact; it is necessary to configure something on the BIOS (although there's a feature to autoconfigure disks, that right now can't find any); or I damaged something when I connected the PATA cable incorrectly. My first bet will be on the dirty pins.
 
 [win31-boot]: https://www.youtube.com/watch?v=-mOKU5esBJU
+
+18/04/2017
+==========
+
+I just finished cleaning the pins of the board to a point where if the disk isn't detected now I don't think its because of dirty pins.
+
+While cleaning the board I saw that the PATA interface on the board is numbered. The ribbon cable has a red wire which is wire number 1, which connects to the number 1 pin on each side. If I knew/had noticed that before I wouldn't have connect the cable in the wrong way.
+
+I just powered the system. First, I received a `DISK BOOT FAILURE`. So I tried the BIOS `HDD IDE AUTO DETECTION`. This time the disk was instantly recognised and its details were filled for Drive C. Great!
+
+This looked promising so I tried to boot into the OS. Only to get a `Missing operating system`... I tried to repeat the disk detection again and this time no disk was detected. Then I powered off the computer and tried again. The disk was detected but with wrong information (160 MB filled vs 405 MB real, for example). Hm... what could be the problem?
+
+I managed to get the `Missing operating system` error again. Why is the operating system "missing"?...
 
 
 License
