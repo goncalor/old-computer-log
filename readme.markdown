@@ -277,7 +277,13 @@ I just powered the system. First, I received a `DISK BOOT FAILURE`. So I tried t
 
 This looked promising so I tried to boot into the OS. Only to get a `Missing operating system`... I tried to repeat the disk detection again and this time no disk was detected. Then I powered off the computer and tried again. The disk was detected but with wrong information (160 MB filled vs 405 MB real, for example). Hm... what could be the problem?
 
-I managed to get the `Missing operating system` error again. Why is the operating system "missing"?...
+I managed to get the `Missing operating system` error again. Why is the operating system "missing"?... I put the disk back in the other computer and there is no doubt that the disk is working and the OS is there...
+
+#### 20h20
+
+It's working!! It booted! Once again the damn problem were dirty pins! I took the board out and looked at the pins again. This time I used fine sandpaper to make them really shiny. Then I reinserted the board, made the BIOS detect it (remember I have no CMOS battery, so the settings don't persist), restarted and voilà!
+
+Now, the next nice step would be to make Ethernet work. I don't have a mouse for this, which difficults things a little. Some things I don't know how to to with the keyboard only (or they can't be done at all).
 
 
 License
