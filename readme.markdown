@@ -59,7 +59,7 @@ The battery is most probably dead in a computer with 20+ years, that much I figu
 
 #### 12h30
 
-The battery plastic box is fastened to the chassis with velcrum. The box seems to be a bit damp: the battery may be leaking.
+The battery plastic box is fastened to the chassis with velcro. The box seems to be a bit damp: the battery may be leaking.
 
 Nope, it's not leaking. The battery turns out to occupy only half the space in the box. It's a 1/2 AA battery! It's a TL-5151, 3.6 V and unknown capacity. I should check if it's dead, but I don't have a multimeter (should buy one). I guess I will use one LED and a resistor to see if it lights up.
 
@@ -98,7 +98,7 @@ Started to disassemble and vacuum. The motherboard reads
 
 I'm looking up this motherboard, trying to find a manual. Found several lookalikes on eBay, but none equal. Now I know this is not a Gemlight GMB-486SG v2.
 
-I can't find MD-4DUV, but I can find M*B*-4DUV/UVC. Maybe the D is a typo in the motherboard? I can't find a PDF with all the info regarding any of these either. Nonetheless I found a webpage with all the [jumper configurations for MB-4DUVC model 2][MB-4DUVC-m2]. This webpage has a schematic for the board, identifying the positions of the main components on the board. The jumper positions on the computer match the ones of the schematic. But the schematic mentions a "KBD" to the right, close to JP1. JP3 seems not to exist on the board (close to KBD). Also the TAG seems not to exist, or at least it is not in the same position as in the schematic.
+I can't find MD-4DUV, but I can find M*B*-4DUV/UVC. Maybe the D is a typo in the motherboard? I can't find a PDF with all the info regarding any of these either. Nonetheless I found a web page with all the [jumper configurations for MB-4DUVC model 2][MB-4DUVC-m2]. This web page has a schematic for the board, identifying the positions of the main components on the board. The jumper positions on the computer match the ones of the schematic. But the schematic mentions a "KBD" to the right, close to JP1. JP3 seems not to exist on the board (close to KBD). Also the TAG seems not to exist, or at least it is not in the same position as in the schematic.
 
 ![MB-4DUVC model 2](doc/MB-4DUVC_MODEL_2.png)
 [MB-4DUVC-m2]: doc/MB-4DUVC_MODEL_2.html
@@ -121,7 +121,7 @@ With the graphics card removed the original four beeps occur (the ones described
 
 Now removing the RAM. There are four slots, each with a RAM stick with 8 HM514400BS6. This IC has 1 Mwords each with 4 bits. Since the system is 32 bits the 8 chips make a complete 32 bit word. Therefore each RAM stick has 4 MB, or 1 MDWORD. 16 MB total on-board. Yay!
 
-With no RAM present the cumputer makes a long beep stops for a bit and does it again. It seems to do this infinitely. With only one stick (in BANK 0) the 4 old beeps return. Also tried only BANK 3: same result.
+With no RAM present the computer makes a long beep stops for a bit and does it again. It seems to do this infinitely. With only one stick (in BANK 0) the 4 old beeps return. Also tried only BANK 3: same result.
 
 #### 20h
 
@@ -237,6 +237,35 @@ A few weeks ago I found a computer on the street. It's from around 2006 (it has 
 ==========
 
 Long time no see. I ordered a 5-pin DIN male to PS/2 female adapter. It arrived today. I already checked that it fits the connector for the keyboard but I don't have time to fire up the computer right now.
+
+18/04/2017
+==========
+
+I have time to work on the computer again. Finally.
+
+I used the keyboard adapter which arrived the other day to connect the keyboard. I worked nicely with a PS/2 keyboard (it is possible that it doesn't work with some of the current USB keyboards, but I have tried none).
+
+To start with I explored the BIOS. There's a bunch of interesting stuff there. One which struck me is that there's an option to select between "write-through" vs "write-back" caching. It is also looks like it is possible to select two memory regions which are not cached. There are power settings too. For example after how many minutes the disk should be stopped if inactive.
+
+After I check the BIOS I was ready to try and boot the OS. But... I had disconnected the disk, diskette, etc. Newer IDE cables can only be connected one way, because the interface has a missing pin and the cable has plastic on the corresponding place. However, these old cables have no such plastic granting that the cable is only inserted one way. And as far as I can tell there's no way to figure this out from the interfaces it's connecting to.
+
+An aside: it seems the term "IDE" is old and this type of interface should now be referred to as PATA (Parallel ATA), the predecessor of Serial ATA (SATA). However, IDE was the name originally used by Western Digital and IDE drives were first used in Compaq PCs in 1986. The disk on this computer is a Western Digital's Caviar 2420, so the term IDE was probably still how it was called at the time this computer was built (even today people refer to IDE...). I'll use "PATA" from now on here.
+
+So... I had to check the photos I took when I was first opening and cleaning the computer to try and figure out how the was connected. Some of the photos had what I needed. So I connected the PATA data cable and the LP4 power cable, I powered the computer aaaaaand... the disk did not move at all. I turned off the computer and tried again with the same results. Then I noticed because the original connections were messy one of the photos misled me and I connected the cable end at the side of the motherboard incorrectly. Damn... I hope I did not damage anything... I reconnected the cable in the correct way but the result was still the same (except now I was in doubt whether I had screwed anything up, which sucks). The disk is not detected by the computer either, which says
+
+    DISK BOOT FAILURE, INSERT SYSTEM DISK AND PRESS ENTER
+
+I decided to put the disk into another computer with PATA to see if the disk was okay. There everything went smoothly! The computer booted into Windows 3.1! There's Microsoft Word 6.0, PowerPoint 3.0, Painbrush 3.11 (that's the previous name of Paint), McAfee VirusScan 3.1.0, MATLAB 4.2c, Netscape Navigator 3.04, ... Many interesting stuff! Oh, and the screensaver is pretty nice too. I don't have a mouse for this computer so I had to check all of this with the keyboard only.
+
+Well, so I know the disk is working. Before I mess anything up I decided to backup the entire OS. I booted Arch GNU/Linux (it's what I currently have on that machine) and made a raw copy of the 425 MB disk with `dd`. This took like 3 minutes (I didn't really count). To check if my copy was OK I converted it into a VMDK file to try and boot the OS on VirtualBox.
+
+    qemu-img convert -f raw win31.iso -O vmdk win31.vmdk
+
+I made a video showing the OS booting and opening some programs and screensavers. You can [watch it here][win31-boot]. Remember this is running on a host with a much more powerful processor and disk, so everything is pretty fast compared to running on the actual hardware. I could have slowed down the processor for example but that would just result in you waiting more time to see it boot.
+
+I put the disk back in the old computer and it still didn't rotate. So I removed the board that controls the hard drive and diskette to see if the pins were clean (after all the problem with the video card was a dirty pin). They were not clean. I just scratched them a little with my nails, but they would benefit from a more through cleaning. I inserted the board back and now the disk rotates. But! it is not detected by the BIOS. So, now I think the problem might be one from these: some dirty pins are not making contact; it is necessary to configure something on the BIOS (although there's a feature to autoconfigure disks, that right now can't find any); or I damaged something when I connected the PATA cable incorrectly. My first bet will be on the dirty pins.
+
+[win31-boot]: https://www.youtube.com/watch?v=-mOKU5esBJU
 
 
 License
