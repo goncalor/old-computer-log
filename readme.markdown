@@ -266,7 +266,7 @@ I put the disk back in the old computer and it still didn't rotate. So I removed
 
 [win31-boot]: https://www.youtube.com/watch?v=-mOKU5esBJU
 
-18/04/2017
+20/04/2017
 ==========
 
 I just finished cleaning the pins of the board to a point where if the disk isn't detected now I don't think its because of dirty pins.
@@ -283,7 +283,12 @@ I managed to get the `Missing operating system` error again. Why is the operatin
 
 It's working!! It booted! Once again the damn problem were dirty pins! I took the board out and looked at the pins again. This time I used fine sandpaper to make them really shiny. Then I reinserted the board, made the BIOS detect it (remember I have no CMOS battery, so the settings don't persist), restarted and voilà!
 
-Now, the next nice step would be to make Ethernet work. I don't have a mouse for this, which difficults things a little. Some things I don't know how to to with the keyboard only (or they can't be done at all).
+Now, the next nice step would be to make Ethernet work. Getting a CMOS battery would also be nice. I don't have a mouse for this either, which difficults things a little. Some things I don't know how to to with the keyboard only (or they can't be done at all).
+
+21/04/2017
+==========
+
+I inserted the network interface controller/card (NIC). The computer boots and now the driver doesn't complain. There's no error right after starting up either (as there was in the video above). Also, running `ipconfig` does not error out as it did before. It actually shows a (static) IP. I tested this with no cable connected to the card, yet.
 
 
 License
