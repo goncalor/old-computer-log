@@ -101,6 +101,7 @@ I'm looking up this motherboard, trying to find a manual. Found several lookalik
 I can't find MD-4DUV, but I can find M*B*-4DUV/UVC. Maybe the D is a typo in the motherboard? I can't find a PDF with all the info regarding any of these either. Nonetheless I found a web page with all the [jumper configurations for MB-4DUVC model 2][MB-4DUVC-m2]. This web page has a schematic for the board, identifying the positions of the main components on the board. The jumper positions on the computer match the ones of the schematic. But the schematic mentions a "KBD" to the right, close to JP1. JP3 seems not to exist on the board (close to KBD). Also the TAG seems not to exist, or at least it is not in the same position as in the schematic.
 
 ![MB-4DUVC model 2](doc/MB-4DUVC_MODEL_2.png)
+
 [MB-4DUVC-m2]: doc/MB-4DUVC_MODEL_2.html
 
 #### 17h15
