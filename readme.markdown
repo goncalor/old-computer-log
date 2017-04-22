@@ -291,6 +291,14 @@ Now, the next nice step would be to make Ethernet work. Getting a CMOS battery w
 
 I inserted the network interface controller/card (NIC). The computer boots and now the driver doesn't complain. There's no error right after starting up either (as there was in the video above). Also, running `ipconfig` does not error out as it did before. It actually shows a (static) IP. I tested this with no cable connected to the card, yet.
 
+22/04/2017
+==========
+
+I just reassembled the whole computer (except for the hand-held scanner board). Then I grabbed a floppy, inserted it and booted the OS. The floppy was not detected by the OS, the file manager couldn't read it. I realised I should have to configure it in the BIOS. After some research it seems this floppy is a 720 kB double-density 3 1/2-inch. So I inserted that info as Drive A on the BIOS.
+
+I booted the OS and this time I was able to read the floppy. This was an old floppy I had made with a PowerPoint presentation. I tried to open it but PowerPoint complained that it was not a PowerPoint file. I guess I used some PowerPoint version too recent and not backwards compatible enough... But well, the floppy drive works! The Windows Undelete feature could even find some old files on the floppy.
+
+I should try to connect the computer to a network and browse some sites with Netscape Navigator. But I think I'd probably be infected with some virus right away. I have an entire backup image of the disk, so I could always recover. But it would be a pain in the ass to overwrite the disk with that image... I'd have to disassemble the computer, put the disk back in another computer, overwrite the disk with the old image and then reassemble the computer again... I don't feel like it right now. So I might try the Internet some other time or I will prepare some local network to test the networking capabilities of the OS.
 
 License
 =======
